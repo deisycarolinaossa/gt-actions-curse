@@ -33,8 +33,15 @@ jobs:
               # una opcion:----->run: "variable value: <VARIABLE>"
               run: |
                 echo "variable value: ${{vars.MY_VAR}}"
-# toma la variable que esta dentro del job sin importar que arriba se tenga ya definida
+# toma el valor de la variable del env en  la linea 12 sin importar que se reutilice en la linea 20
             - name: Variables
+              run: |
+                echo "workflows env: ${{vars.My_test_var}}"
+                echo "workflows2 env: ${{vars.My_test_var_new}}" 
+# toma el valor de la variable del env en  la linea 12 sin importar que se reutilice en la linea 20
+            - name: Variables2
+              env: 
+                My_test_var_new : 'nuevo valor'
               run: |
                 echo "workflows env: ${{vars.My_test_var}}"
                 echo "workflows2 env: ${{vars.My_test_var_new}}" 
