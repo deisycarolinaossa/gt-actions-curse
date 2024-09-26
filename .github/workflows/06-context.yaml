@@ -33,17 +33,23 @@ jobs:
               # una opcion:----->run: "variable value: <VARIABLE>"
               run: |
                 echo "variable value: ${{vars.MY_VAR}}"
-# toma el valor de la variable del env en  la linea 12 sin importar que se reutilice en la linea 20
+# toma el valor de la variable del la linea 20 sin importar que se reutilice y este clasificada en la linea 12
             - name: Variables
               run: |
                 echo "workflows env: ${{env.My_test_var}}"
                 echo "workflows2 env: ${{env.My_test_var_new}}" 
-# toma el valor de la variable del env en  la linea 12 sin importar que se reutilice en la linea 20
+# prevela el valor que se agrega dentro del name (step)
             - name: Variables2
               env: 
                 My_test_var_new : 'nuevo valor'
               run: |
                 echo "workflows env: ${{env.My_test_var}}"
                 echo "workflows2 env: ${{env.My_test_var_new}}" 
-
+    echo-data2:
+        runs-on: ubuntu-latest
+        steps:
+            - name:  Valores variables
+              run: |
+                echo "workflows env: $My_test_var"
+                echo "workflows2 env: $My_test_var_new" 
               
