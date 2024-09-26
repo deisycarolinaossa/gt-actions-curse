@@ -1,0 +1,13 @@
+name: 05-2-Evn Filters and Activity Types
+
+on: 
+    pull_request:
+        types: closed
+        branch: main
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo
+              run: Running whenever a PR is closed
