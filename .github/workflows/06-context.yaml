@@ -9,9 +9,15 @@ on:
                 type: boolean
                 default: false
 
+env:
+    My_test_var: 'workflow'
+    My_test_var_new: 'workflow2'
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            my_job_var: 'rockwell'
+            My_test_var_new: 'pruebas'
         steps:
             - name: Display Information
               run: |
@@ -27,3 +33,10 @@ jobs:
               # una opcion:----->run: "variable value: <VARIABLE>"
               run: |
                 echo "variable value: ${{vars.MY_VAR}}"
+# toma la variable que esta dentro del job sin importar que arriba se tenga ya definida
+            - name: Variables
+              run: |
+                echo "workflows env: ${{vars.My_test_var}}"
+                echo "workflows2 env: ${{vars.My_test_var_new}}" 
+
+              
