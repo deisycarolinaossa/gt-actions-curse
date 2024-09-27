@@ -45,6 +45,7 @@ jobs:
               run: |
                 echo "workflows env: ${{env.My_test_var}}"
                 echo "workflows2 env: ${{env.My_test_var_new}}" 
+# no es necesatio agregarle {} para imprimr y utlizar las varibales 
     echo-data2:
         runs-on: ubuntu-latest
         steps:
