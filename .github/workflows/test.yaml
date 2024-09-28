@@ -1,0 +1,23 @@
+name: update_tenants_qa/dev
+
+on:
+#  schedule:
+ #   - cron: "0 8 * * *"
+  workflow_dispatch:
+    inputs:
+      aks_list:
+        type: choice
+        description: Tenant Update
+        options:
+          - ftdsd-dev-aks-cluster-010
+          - ftdsd-qa-aks-cluster-001
+
+
+jobs:
+  update_tenant:
+    runs-on: ubuntu-latest 
+    steps:
+        - name: update tenant10
+          if: ${{inputs.aks_list}}===ftdsd-dev-aks-cluster-010
+       #   run: bash ./Update_tenants/changedev10.sh {{env.version}}
+          run: echo test ${{inputs.dev}}
