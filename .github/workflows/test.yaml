@@ -23,8 +23,3 @@ jobs:
           run: |
             Update tenant ftdsdci010distmastercd1 in the cluster ${{inputs.aks_list}}
             echo test nuevo
-        - name: update Qa
-          if: ${{inputs.aks_list}}==='ftdsd-qa-aks-cluster-001'
-          run: |
-            Update tenants (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster ${{inputs.aks_list}}
-            echo test nuevo
