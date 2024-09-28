@@ -28,5 +28,3 @@ jobs:
           run: |
             Update tenants (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster ${{inputs.aks_list}}
             echo test nuevo
-
-#   run: bash ./Update_tenants/changedev10.sh {{env.version}}
