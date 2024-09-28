@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
         - name: update tenant10
-          if: ${{inputs.aks_list}}==='ftdsd-dev-aks-cluster-010'
           run: |
             Update tenant ftdsdci010distmastercd1 in the cluster ${{inputs.aks_list}}
             echo test nuevo
