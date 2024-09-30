@@ -1,5 +1,6 @@
 name: update_tenants_qa/dev
-run-name: Update tenant in cluster
+run-name: Update tenant in cluster | ${{ github.event.inputs.aks_list.options}}
+
 
 on:
 #  schedule:
@@ -19,5 +20,5 @@ jobs:
     steps:
         - name: update tenant10
           run: |
-            Update tenant ftdsdci010distmastercd1 in the cluster
+            Update tenant ftdsdci010distmastercd1 in the cluster ${{ github.event.inputs.aks_list.options}}
             echo test
