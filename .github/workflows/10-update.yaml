@@ -1,4 +1,4 @@
-name: update_tenants_qa/dev
+name: 10-update
 run-name: Update tenant in cluster | ${{inputs.aks_list}}
 
 on:
@@ -12,7 +12,6 @@ on:
         options:
           - ftdsd-dev-aks-cluster-010
           - ftdsd-qa-aks-cluster-001
-
 
 jobs:
   update_tenant:
@@ -28,5 +27,3 @@ jobs:
           run: |
             Update tenants (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster ${{inputs.aks_list}}
             echo test nuevo
-
-#   run: bash ./Update_tenants/changedev10.sh {{env.version}}
