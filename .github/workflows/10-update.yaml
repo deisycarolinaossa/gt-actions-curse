@@ -20,4 +20,4 @@ jobs:
     steps:
         - name: update tenant10
           run: |
-            echo test nuevo
+            echo test nuevo ${{ github.event.inputs.aks_list }}
