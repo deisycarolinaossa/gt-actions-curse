@@ -1,6 +1,5 @@
 name: update_tenants_qa/dev
-run-name: Update tenant in cluster | ${{ github.event.inputs.aks_list }}
-
+run-name: Update tenant in cluster
 
 on:
 #  schedule:
