@@ -1,25 +1,32 @@
 name: update_tenants_qa/dev
-run-name: Update tenant in cluster | ${{ github.event.inputs}}
-
+run-name: Update tenant in cluster | ${{inputs.tenants}}
 
 on:
 #  schedule:
  #   - cron: "0 8 * * *"
   workflow_dispatch:
     inputs:
-        ftdsd-qa-aks-cluster-001: 
-            type: boolean
-            default: false
-        ftdsd-dev-aks-cluster-010:
-            type: boolean
-            default: false
+      tenants:
+        type: choice
+        description: Tenant Update
+        options:
+          - ftdsd-dev-aks-cluster-010
+          - ftdsd-qa-aks-cluster-001
 
-  
+
 jobs:
   update_tenant:
     runs-on: ubuntu-latest 
     steps:
         - name: update tenant10
+          if: ${{inputs.tenants}}==='ftdsd-dev-aks-cluster-010'
           run: |
-            Update tenant ftdsdci010distmastercd1 in the cluster ${{ github.event.inputs.aks_list.options}}
-            echo test
+            Update tenant ftdsdci010distmastercd1 in the cluster ${{inputs.tenants}}
+            echo test nuevo
+        - name: update Qa
+          if: ${{inputs.tenants}}==='ftdsd-qa-aks-cluster-001'
+          run: |
+            Update tenants (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster ${{inputs.tenants}}
+            echo test nuevo
+
+#   run: bash ./Update_tenants/changedev10.sh {{env.version}}
