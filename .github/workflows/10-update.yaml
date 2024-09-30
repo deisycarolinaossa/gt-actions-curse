@@ -1,5 +1,5 @@
 name: update_tenants_qa/dev
-run-name: Update tenant in cluster | ${{inputs.aks_list}}
+run-name: Update tenant in cluster | ${{ github.event.inputs.aks_list }}
 
 
 on:
@@ -22,7 +22,3 @@ jobs:
           run: |
             Update tenant ftdsdci010distmastercd1 in the cluster
             echo test
-        - name: update QA
-          run: |
-              Update tenant (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster
-              echo test
