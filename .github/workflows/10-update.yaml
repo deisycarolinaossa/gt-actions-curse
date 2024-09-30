@@ -1,4 +1,5 @@
 name: update_tenants_qa/dev
+run-name: Update tenant in cluster | ${{inputs.aks_list}}
 
 
 on:
