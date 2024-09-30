@@ -5,9 +5,14 @@ on:
 #  schedule:
  #   - cron: "0 8 * * *"
   workflow_dispatch:
+    inputs:
+        aks_list:
+          type: choice
+          description: Tenant Update
+          options:
+            - ftdsd-dev-aks-cluster-010
+            - ftdsd-qa-aks-cluster-001
   
-
-
 jobs:
   update_tenant:
     runs-on: ubuntu-latest 
