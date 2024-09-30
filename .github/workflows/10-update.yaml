@@ -1,19 +1,16 @@
 name: update_tenants_dev
-run-name: Update tenant in cluster
 
 on:
-#  schedule:
+#   schedule:
  #   - cron: "0 8 * * *"
-  workflow_dispatch:
-
+     workflow_dispatch:
 
 jobs:
-  update_tenant:
-    runs-on: ubuntu-latest 
-    steps:
-        - name: update tenant10
-          run: |
-            Update tenant ftdsdci010distmastercd1 in the cluster
-            echo test nuevo
-
+    tenant010:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Tenant Update Cluster 010 ftdsdci010distmastercd1
+              run: |
+                echo "update tenant ftdsdci010distmastercd1"
+                echo "test"
 #   run: bash ./Update_tenants/changedev10.sh {{env.version}}
