@@ -20,4 +20,9 @@ jobs:
     steps:
         - name: update tenant10
           run: |
-            echo test nuevo ${{ github.event.inputs.aks_list }}
+            Update tenant ftdsdci010distmastercd1 in the cluster ${{ github.event.inputs.aks_list }}
+            echo test
+        - name: update QA
+          run: |
+              Update tenant (ftdsqa001,74a1cfee-8f5b-41e5-9162-b7ec30e9a643,ftdsqadae001) in the cluster ${{ github.event.inputs.aks_list }}
+              echo test
