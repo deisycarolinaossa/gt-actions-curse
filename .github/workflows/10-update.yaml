@@ -1,5 +1,5 @@
 name: update_tenants_qa/dev
-run-name: Update tenant in cluster | ${{ github.event.inputs.aks_list.options}}
+run-name: Update tenant in cluster | ${{ github.event.inputs}}
 
 
 on:
@@ -7,12 +7,13 @@ on:
  #   - cron: "0 8 * * *"
   workflow_dispatch:
     inputs:
-        aks_list:
-          type: choice
-          description: Tenant Update
-          options:
-            - ftdsd-dev-aks-cluster-010
-            - ftdsd-qa-aks-cluster-001
+        ftdsd-qa-aks-cluster-001: 
+            type: boolean
+            default: false
+        ftdsd-dev-aks-cluster-010:
+            type: boolean
+            default: false
+
   
 jobs:
   update_tenant:
