@@ -19,6 +19,10 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
         - name: update tenant10
-         
           run: |
+            Update tenant ftdsdci010distmastercd1 in the cluster ${{inputs.aks_list}}  
+            echo test nuevo
+        - name: update Qa
+          run: |
+            Update tenant ftdsdci010distmastercd1 in the cluster ${{inputs.aks_list}}  
             echo test nuevo
